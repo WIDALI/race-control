@@ -20,7 +20,7 @@ All data is persisted either via the server (to JSON files) or via `localStorage
 ### How to use
 ```bash
 npm install
-npm run config
+npm run setup
 npm start       #runs on http://localhost:8080
 ```
 
@@ -158,6 +158,7 @@ this is the css code:
     background-color: #f2c45d;
 ````
 **Although ChatGPT suggested an alternative, I chose not to follow the suggested improvements as I didnt fully understand the route it took and whilst it isn't the most modular piece og code, it doesn't take away from the core functionality as it just generates an image.**
+
 ---
 ### formatting the Timer
 > how would i create a function, let's call it formatTime that increments the clock
@@ -544,4 +545,3 @@ Using AI helped speed up development when I was stuck, especially on architectur
 * Persisted timer state using `localStorage`, as I couldn't quite grasp implenting a one-page-app
 
 ---
-# race-control
