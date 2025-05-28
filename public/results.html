@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Race Results</title>
+    <link rel="stylesheet" href="results.css">
+</head>
+<body>
+    <h1>Official Race Results</h1>
+
+    <table>
+    <thead>
+        <tr>
+            <th>Position</th>
+            <th>Full Name</th>
+            <th>Time</th>
+        </tr>
+    </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <button id="downloadCsvButton">Download CSV</button>
+
+    <button id="resetDataButton">Reset Race Data</button>
+
+   
+    <section id="resetModal" class="modal hidden">
+    <div class="modal-content">
+        <p>Are you sure you want to reset all race data and return to the home screen?</p>
+        <div class="modal-buttons">
+        <button id="resetYes" class="btn confirm">Yes</button>
+        <button id="resetNo" class="btn cancel">No</button>
+        </div>
+    </div>
+    </section>
+
+    <button id="goHomeButton" onclick="window.location.href='/'">Home</button>
+
+    <script src="results.js"></script>
+</body>
+</html>

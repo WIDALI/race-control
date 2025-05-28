@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Association</title>
+    <link rel="stylesheet" href="association.css" />
+</head>
+<body>
+    <div class="container">
+    <h1>Placement</h1>
+    <form id="associationForm">
+        <input type="text" id="fullName" name="fullName" placeholder="Full Name" required />
+        <input type="text" id="bibNumber" name="bibNumber" placeholder="Bib No." required />
+        <input type="text" id="position" name="position" placeholder="Position" required />
+        <button type="submit" id="submitButton">Submit</button>
+    </form>
+
+    <button id="viewResultsButton">View Results</button>
+
+    <button id="goHomeButton" onclick="window.location.href='/'">Home</button>
+
+    <div id="confirmationMessage"></div>
+
+    <section id="confirmResultsModal" class="modal hidden">
+    <div class="modal-content">
+        <p>Are you sure you want to finalise and view the results?</p>
+        <div class="modal-buttons">
+        <button id="confirmResultsYes" class="btn confirm">Yes</button>
+        <button id="confirmResultsNo" class="btn cancel">No</button>
+        </div>
+    </div>
+    </section>
+
+    </div>
+
+<script src="association.js"></script>
+</body>
+</html>

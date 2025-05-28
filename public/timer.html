@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Race Timer</title>
+    <link rel="stylesheet" href="timer.css">
+</head>
+<body>
+    <main class="container">
+
+        <button id="goHomeButton" onclick="window.location.href='/'">Home</button>
+
+       
+        <button id="stopButton" class="btn stop hidden">FINISH</button>
+        <button id="startButton" class="btn start">START</button>
+
+        
+        <section class="circle-timer" id="lapArea">
+            <div>
+            <div id="timerDisplay">00:00:00</div>
+            <p id="tapInstruction">Tap on me every time a runner crosses the line</p>
+        </div>
+        </section>
+
+    
+        <section class="runners-box hidden">
+            <h2>RUNNERS</h2>
+            <table id="runnerTable">
+                <thead>
+                    <tr>
+                        <th>Position</th>
+                        <th>Time</th>
+                    </tr>
+                </thead>
+                <tbody id="runnerList">
+                    
+                </tbody>
+            </table>
+        </section>
+        
+        <section id="confirmFinishModal" class="modal hidden">
+        <div class="modal-content">
+            <p>Are you sure you want to finish the race?</p>
+            <div class="modal-buttons">
+            <button id="confirmYes" class="btn confirm">Yes</button>
+            <button id="confirmNo" class="btn cancel">No</button>
+            </div>
+        </div>
+        </section>
+
+        
+    </main>
+
+    <div id="saveStatus" class="save-status hidden">Saving laps...</div>
+
+
+    <script src="timer.js"></script>
+</body>
+</html>

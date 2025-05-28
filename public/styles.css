@@ -1,0 +1,282 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: sans-serif;
+    display: grid;
+    grid-template-rows: 1fr;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    height: 100vh;
+}
+
+@media (max-width: 600px) {
+    .container {
+        grid-template-rows: auto;
+        grid-template-columns: 1fr;
+    }
+
+    .half {
+        min-height: 33.33vh;
+    }
+
+    .icon.flag {
+        transform: scale(0.8);
+    }
+
+    .icon.stopwatch,
+    .icon.barcode {
+        transform: scale(0.9);
+    }
+
+    .half p {
+        font-size: 16px;
+    }
+}
+
+.half {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.top {
+    background-color: black;
+    color: #f2c45d;
+}
+
+.bottom {
+    background-color: black;
+    color: #f2c45d;
+}
+
+.middle {
+    background-color: #f2c45d;
+    color: black;
+}
+
+.icon {
+    font-size: 64px;
+    margin-bottom: 10px;
+}
+
+.half p {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.half:hover {
+    filter: brightness(0.9);
+}
+
+.icon.stopwatch {
+    width: 100px;
+    height: 100px;
+    border: 10px solid #f2c45d;
+    border-radius: 50%;
+    position: relative;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon.stopwatch::before {
+    content: '';
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    width: 7px;
+    height: 38%;
+    background-color: #f2c45d;
+    transform: translateX(-50%);
+}
+
+.icon.stopwatch::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 7px;
+    height: 25%;
+    background-color: #f2c45d;
+    transform: translate(-50%, -100%) rotate(120deg);
+    transform-origin: center bottom;
+}
+
+.icon.flag {
+    width: 50px;
+    height: 100px;
+    position: relative;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon.flag::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 6px;
+    height: 100%;
+    background-color: #f2c45d;
+}
+
+.flag-box {
+    position: absolute;
+    left: 6px;
+    top: 0;
+    width: 80px;
+    height: 50px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 0;
+}
+
+.flag-box div {
+    width: 100%;
+    height: 100%;
+}
+
+.flag-box div:nth-child(odd):nth-child(-n+4),
+.flag-box div:nth-child(even):nth-child(n+5):nth-child(-n+8),
+.flag-box div:nth-child(odd):nth-child(n+9):nth-child(-n+12) {
+    background-color: #f2c45d;
+}
+
+.icon.barcode {
+    width: 150px;
+    height: 70px;
+    margin-bottom: 10px;
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.icon.barcode::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        repeating-linear-gradient(
+            to right,
+            black 0px, black 10px,
+            transparent 10px, transparent 15px,
+            black 15px, black 18px,
+            transparent 18px, transparent 21px,
+            black 21px, black 31px,
+            transparent 31px, transparent 36px,
+            black 36px, black 41px,
+            transparent 41px, transparent 44px
+        );
+}
+
+.sync-button-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    background-color: #111;
+}
+
+#syncDataBtn {
+    padding: 12px 24px;
+    background-color: #f2c45d;
+    color: black;
+    font-weight: bold;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#syncDataBtn:hover {
+    background-color: #e6b943;
+    transform: translateY(-2px);
+}
+
+#syncDataBtn:active {
+    transform: translateY(0);
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.modal-content {
+    background: white;
+    padding: 25px 30px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 90%;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.modal-content p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: #111;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.btn.confirm {
+    background-color: #4CAF50; 
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn.confirm:hover {
+    background-color: #45a049;
+}
+
+.btn.cancel {
+    background-color: #f44336; 
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn.cancel:hover {
+    background-color: #d73833;
+}
+
+.modal.hidden {
+    display: none;
+}

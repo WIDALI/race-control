@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Race Control</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="half top">
+      <div class="icon stopwatch"></div>
+      <p>START</p>
+    </div>
+
+    <div class="half middle">
+      <div class="icon barcode"></div>
+      <p>ASSOCIATION</p>
+    </div>
+
+    <div class="half bottom">
+        <div class="icon flag">
+            <div class="flag-box">
+            <div></div><div></div><div></div><div></div>
+            <div></div><div></div><div></div><div></div>
+            <div></div><div></div><div></div><div></div>
+            </div>
+        </div>
+        <p>RESULTS</p>
+        </div>
+    </div>
+
+    <div class="sync-button-wrapper">
+      <button id="syncDataBtn">Sync Data</button>
+    </div>
+
+    <section id="syncConfirmModal" class="modal hidden">
+      <div class="modal-content">
+        <p>Upload and wipe all locally saved race data?</p>
+        <div class="modal-buttons">
+          <button id="syncYes" class="btn confirm">Yes</button>
+          <button id="syncNo" class="btn cancel">No</button>
+        </div>
+      </div>
+    </section>
+
+
+  <script src="index.js"></script>
+</body>
+</html>

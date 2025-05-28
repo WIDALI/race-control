@@ -1,0 +1,211 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 20px;
+}
+
+
+.container {
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    width: 100%;
+    max-width: 600px;
+}
+
+
+.btn-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;        
+    max-width: 500px;   
+    margin: 0 auto; 
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.start {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 2rem;
+}
+
+.stop {
+    background-color: #D9534F;
+    color: white;
+    font-size: 1.4rem;
+}
+
+/* Circle Timer */
+.circle-timer {
+    width: 100%;
+    max-width: 350px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    border: 12px solid #f2c45d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+#timerDisplay {
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+#tapInstruction {
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-top: 10px;
+    text-align: center;
+}
+
+
+.runners-box {
+    background-color: #666;
+    width: 100%;
+    padding: 15px;
+    border-radius: 15px;
+    color: white;
+}
+
+.runners-box h2 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+#runnerList {
+    margin-top: 10px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+
+#runnerTable {
+    width: 100%;
+    border-collapse: collapse;
+    color: white;
+}
+
+#runnerTable th,
+#runnerTable td {
+    padding: 8px 12px;
+    text-align: left;
+}
+
+#runnerTable thead {
+    border-bottom: 2px solid white;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px 30px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.modal-content p {
+    margin-bottom: 16px;
+    font-size: 1.1rem;
+    color: black; 
+}
+
+.modal-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+#confirmYes {
+    background-color: #28a745; 
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#confirmNo {
+    background-color: #dc3545; 
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.save-status {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    color: #f2c45d;
+}
+
+.save-status.hidden {
+    display: none;
+}
+
+#goHomeButton {
+  margin-top: 20px;
+  padding: 12px;
+  background-color: #444;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  transition: background-color 0.2s ease;
+}
+
+#goHomeButton:hover {
+  background-color: #666;
+}
+
+.hidden {
+    display: none;
+}
